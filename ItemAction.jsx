@@ -1,7 +1,11 @@
+import { useContext } from "react"
+import DeleteContext from "./CONTEXT/DeleteContext"
 
-//add the item delete function as a prop which is passed down from spacecraftBuilder to inventoryDisplay to here
-const ItemAction = () => {
-
+const ItemAction = ({ id }) => {
+    const deleteItem = useContext(DeleteContext)
+    return (
+        <button onClick={() => deleteItem(id)}>Delete</button>
+    )
 }
 
 export default ItemAction
