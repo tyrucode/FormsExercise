@@ -1,5 +1,6 @@
 import { useState } from "react";
-//pass down inventory state as a prop
+import { FormContainer, TextFieldElement } from 'react-hook-form-mui'
+
 const ItemForm = ({ addItem }) => {
     const INITIAL_STATE = {
         name: '',
@@ -25,39 +26,48 @@ const ItemForm = ({ addItem }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name:</label>
-            <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Item Name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-            />
-            <label htmlFor="quantity">Quantity:</label>
-            <input
-                type="text"
-                name="quantity"
-                id="quantity"
-                placeholder="Item Quantity"
-                required
-                value={formData.quantity}
-                onChange={handleChange}
-            />
-            <label htmlFor="purpose">Purpose:</label>
-            <input
-                type="text"
-                name="purpose"
-                id="purpose"
-                placeholder="Item Purpose"
-                required
-                value={formData.purpose}
-                onChange={handleChange}
-            />
-            <button>Add!</button>
-        </form>
+        <>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="name">Name:</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Item Name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+                <label htmlFor="quantity">Quantity:</label>
+                <input
+                    type="text"
+                    name="quantity"
+                    id="quantity"
+                    placeholder="Item Quantity"
+                    required
+                    value={formData.quantity}
+                    onChange={handleChange}
+                />
+                <label htmlFor="purpose">Purpose:</label>
+                <input
+                    type="text"
+                    name="purpose"
+                    id="purpose"
+                    placeholder="Item Purpose"
+                    required
+                    value={formData.purpose}
+                    onChange={handleChange}
+                />
+                <button>Add!</button>
+            </form>
+            {/* <FormContainer
+                defaultValues={{ name: '' }}
+                label='Name:'
+                onSuccess={addItem}
+            >
+
+            </FormContainer> */}
+        </>
     )
 }
 
