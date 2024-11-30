@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { FormContainer, TextFieldElement } from 'react-hook-form-mui'
 
 const ItemForm = ({ addItem }) => {
+    //initial state of our form so we dont have to type twice
     const INITIAL_STATE = {
         name: '',
         quantity: '',
         purpose: ''
     }
-
+    //form initial state
     const [formData, setFormData] = useState(INITIAL_STATE);
-
+    //form onChange will update the form 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(formData => ({
@@ -18,13 +18,14 @@ const ItemForm = ({ addItem }) => {
         }));
 
     }
-
+    //on submit dont refresh, add the item, and return form to empty
     const handleSubmit = (e) => {
         e.preventDefault();
         addItem({ ...formData });
         setFormData(INITIAL_STATE)
     }
-
+    //return form, added a div for bootstrap, basic form stuff just making it so our values connect to formData and connecting the changes to
+    //onChange function. Also connecting the entire form to our onSubmit function
     return (
         <div class="mb-3">
 
