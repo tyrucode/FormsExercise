@@ -26,8 +26,9 @@ const ItemForm = ({ addItem }) => {
     }
 
     return (
-        <>
-            <form onSubmit={handleSubmit}>
+        <div class="mb-3">
+
+            <form onSubmit={handleSubmit} >
                 <label htmlFor="name">Name:</label>
                 <input
                     type="text"
@@ -60,14 +61,7 @@ const ItemForm = ({ addItem }) => {
                 />
                 <button>Add!</button>
             </form>
-            {/* <FormContainer
-                defaultValues={{ name: '' }}
-                label='Name:'
-                onSuccess={addItem}
-            >
-
-            </FormContainer> */}
-        </>
+        </div>
     )
 }
 
